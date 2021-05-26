@@ -75,6 +75,8 @@
         .comant{
             font-size: larger;/*文字大小*/
             text-align: center;/*文字置中*/
+            color: black;/*文字顏色*/
+            text-decoration: none;/*底線取消*/
         }
         .menuicon{            
             position: fixed;/*絕對位置*/
@@ -116,6 +118,9 @@
         ul{
             padding: 0%;
             transition: 0.3s;
+        }
+        a{
+            text-decoration: none;
         }
         /*menu class--------------------------------------*/
 
@@ -192,7 +197,7 @@
         </a>
         -------------------專欄樣式-------------------->
 
-        <a class="block" href="">
+        <a class="block" href="https://sgyamiko.github.io/S.G.note/S.G.vt.1.HTML">
             <div>
                 <img src="2021如何成為v.jpg">
             </div>
@@ -218,31 +223,31 @@
         </div>
         <!--------------------看板娘--------------------> 
         <!--------------------電腦版菜單--------------------> 
-        <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
-            <h3 class="comant">MENU</h3>
-                    
-            <ul class="comant">首頁</ul>            
-                    
-            <ul class="comant">前端語言NOTE</ul>            
-                    
-            <ul class="comant">VTUBER</ul>
-        </div>
-        <!--------------------電腦版菜單--------------------> 
-        <!--------------------rwd版菜單--------------------> 
-        <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
-                
-                    
-            <h3 class="comant">MENU</h3>
-                    
-            <ul class="comant">首頁</ul>            
-                    
-            <ul class="comant">前端語言NOTE</ul>            
-                    
-            <ul class="comant">VTUBER</ul>
-                                
-                
-        </div>
-        <!--------------------rwd版菜單--------------------> 
+    <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+        <h3 class="comant">MENU</h3>
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
+        <ul class="comant">前端語言NOTE</ul>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+    </div>
+    <!--------------------電腦版菜單--------------------> 
+    <!--------------------rwd版菜單--------------------> 
+    <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        
+            
+        <h3 class="comant">MENU</h3>
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
+        <ul class="comant">前端語言NOTE</ul>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+                        
+        
+    </div>
+    <!--------------------rwd版菜單--------------------> 
 
     </div>
     

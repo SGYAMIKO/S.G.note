@@ -53,6 +53,8 @@
         .comant{
             font-size: larger;/*文字大小*/
             text-align: center;/*文字置中*/
+            color: black;/*文字顏色*/
+            text-decoration: none;/*底線取消*/
         }
         .menuicon{            
             position: fixed;/*絕對位置*/
@@ -94,6 +96,9 @@
         ul{
             padding: 0%;
             transition: 0.3s;
+        }
+        a{
+            text-decoration: none;
         }
         /*menu class--------------------------------------*/
 
@@ -141,6 +146,7 @@
         如何成為vtuber 2021更新版
     </p>
     <div class="note">
+        
         在2020/4我發了第一支標題是如何成為vtuber的影片，也是我回響最高的影片，現在一年過去了，做法多多少少有些改動，其實我一直有打算更新這方面的資訊，但是又不想用以往的方式去呈現，所以一直沒有做w<br>
         這次藉由S.G.NOTE正式上線，就打算發一篇這方面內容的更新，廢話有點太多了，那就直接開始~
         <br>
@@ -183,6 +189,7 @@
         <br>
         軟體就沒什麼好說的，咻咻啪啪就弄好了~<br>
         如果得太多人在軟體上有問題，我再補文章好了，就這樣~</p>
+        
 
 
         <br>
@@ -205,27 +212,27 @@
     <!--------------------電腦版菜單--------------------> 
     <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
         <h3 class="comant">MENU</h3>
-                
-        <ul class="comant">首頁</ul>            
-                
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
         <ul class="comant">前端語言NOTE</ul>            
-                
-        <ul class="comant">VTUBER</ul>
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
     </div>
     <!--------------------電腦版菜單--------------------> 
     <!--------------------rwd版菜單--------------------> 
     <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        
             
-                
         <h3 class="comant">MENU</h3>
-                
-        <ul class="comant">首頁</ul>            
-                
-        <ul class="comant">前端語言NOTE</ul>            
-                
-        <ul class="comant">VTUBER</ul>
-                            
             
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
+        <ul class="comant">前端語言NOTE</ul>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+                        
+        
     </div>
     <!--------------------rwd版菜單--------------------> 
     <script>

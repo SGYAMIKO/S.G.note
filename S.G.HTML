@@ -76,6 +76,8 @@
         .comant{
             font-size: larger;/*文字大小*/
             text-align: center;/*文字置中*/
+            color: black;/*文字顏色*/
+            text-decoration: none;/*底線取消*/
         }
         .cube{
             display: flex;/*排版*/
@@ -88,43 +90,43 @@
             text-align: center;
             box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
             margin: 20px;/*外部間格*/
-            width: 300px;
-            height: 500px;
-            padding: 0px;
-            border: none;
-            max-width: 100%;
-            min-width: 180px;
-            min-height: 200px;
-            background-image: url(介紹背景.jpg);
-            border-radius: 3%;            
+            width: 300px;/*圖片大小*/
+            height: 500px;/*圖片高度*/
+            padding: 0px;/*內邊界*/
+            border: none;/*無邊框*/
+            max-width: 100%;/*最大尺寸*/
+            min-width: 180px;/*最小尺吋*/
+            min-height: 200px;/*最小高度*/
+            background-image: url(介紹背景.jpg);/*背景圖片*/
+            border-radius: 3%;/*圓角*/            
         }
 
         .youtubehref{    
-            margin: 5px;
-            display: block;        
-            text-decoration: none;
-            color: rgb(255, 0, 0);
-            font-size: 32px;
-            -webkit-text-stroke: 2px rgb(50,50,50);
-            transition: all 0.3s;
+            margin: 5px;/*外邊界*/
+            display: block;/*區塊屬性*/        
+            text-decoration: none;/*底線取消*/
+            color: rgb(255, 0, 0);/*文字顏色*/
+            font-size: 32px;/*文字大小*/
+            -webkit-text-stroke: 2px rgb(50,50,50);/*文字邊線*/
+            transition: all 0.3s;/*動畫時間*/
         }
         .twitterhref{
-            margin: 5px;
-            display: block;
-            text-decoration: none;
-            color: rgb(0, 132, 255);
-            font-size: 32px;
-            -webkit-text-stroke: 2px rgb(50,50,50);
-            transition: all 0.3s;
+            margin: 5px;/*外邊界*/
+            display: block;/*區塊屬性*/
+            text-decoration: none;/*底線取消*/
+            color: rgb(0, 132, 255);/*文字顏色*/
+            font-size: 32px;/*文字大小*/
+            -webkit-text-stroke: 2px rgb(50,50,50);/*文字邊線*/
+            transition: all 0.3s;/*動畫時間*/
         }
         .gmailhref{
-            margin: 5px;
-            display: block;
-            text-decoration: none;
-            color: rgb(255, 255, 0);
-            font-size: 32px;
-            -webkit-text-stroke: 2px rgb(50,50,50);
-            transition: all 0.3s;
+            margin: 5px;/*外邊界*/
+            display: block;/*區塊屬性*/
+            text-decoration: none;/*底線取消*/
+            color: rgb(255, 255, 0);/*文字顏色*/
+            font-size: 32px;/*文字大小*/
+            -webkit-text-stroke: 2px rgb(50,50,50);/*文字邊線*/
+            transition: all 0.3s;/*動畫時間*/
         }
 
         .twitter{
@@ -165,7 +167,8 @@
             box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
         }
 
-        ul:hover{/*懸停選擇器*/
+        /*懸停選擇器*/
+        ul:hover{
             background-color: rgb(255, 255, 255);
         }
         .gmailhref:hover{
@@ -177,10 +180,14 @@
         .youtubehref:hover{
             background-color: rgb(255, 0, 0,0.5);
         }
+        /*懸停選擇器*/
         
         ul{
-            padding: 0%;
-            transition: 0.3s;
+            padding: 0%;/*內邊界*/
+            transition: 0.3s;/*動畫時間*/
+        }
+        a{
+            text-decoration: none;
         }
 
         @media(max-width:1100px){/*rwd<1100*/
@@ -247,7 +254,7 @@
                         2021/05/23如何成為vtuber2021說明初稿完成<br>
                         2021/05/24專欄主題設想，增設vtuber專欄<br>
                         2021/05/25修該專欄頁面載入動畫及vtuber專欄內容填充<br>
-                        <br>
+                        2021/05/26網站beta<br>
                         <br>
                         <br>
                         <br>
@@ -285,11 +292,11 @@
     <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
         <h3 class="comant">MENU</h3>
             
-        <ul class="comant">首頁</ul>            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
             
         <ul class="comant">前端語言NOTE</ul>            
             
-        <ul class="comant">VTUBER</ul>
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
     </div>
     <!--------------------電腦版菜單--------------------> 
     <!--------------------rwd版菜單--------------------> 
@@ -298,11 +305,11 @@
             
         <h3 class="comant">MENU</h3>
             
-        <ul class="comant">首頁</ul>            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
             
         <ul class="comant">前端語言NOTE</ul>            
             
-        <ul class="comant">VTUBER</ul>
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
                         
         
     </div>
