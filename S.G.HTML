@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.G.</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;英文-->
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"><!--引入外部字體的連結;英文-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;中文-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"><!--引入外部字體的連結;中文-->
+    <style>
+        body{
+            margin: 0%;/*無邊界*/
+            font-family:'Varela Round', sans-serif, 'Noto Sans TC', sans-serif;/*文章預設文字*/
+            color: ivory;/*文章預設文字顏色*/
+            background-image: url(backcolorbt.jpg);/*圖片連結*/
+            background-position: center;/*置中圖片*/
+            background-size:cover;/*圖片完全覆蓋頁面*/
+            background-attachment: fixed;/*圖片不隨著捲動;固定圖片*/
+            animation: zuchange 10s infinite;/*動畫效果 動畫名稱 10秒重複 無限循環*/
+            opacity: 0;/*可視程度，頁面載入動畫*/
+            transition:opacity 1s;/*頁面載入動畫花費秒數*/         
+        }
+        
+        @keyframes zuchange{/*背景動畫*/
+            0%{background-image: url(backcolorbt.jpg);}/*同15列*/
+            50%{background-image: url(backcolorbt0.jpg);}/*同15列*/        
+        }
+
+        /*---------項目css----------*/
+        img{
+            border-radius: 25%;/*圓角*/
+        }
+        table{
+            padding: 5px;/*與內間格*/
+            width: 100%;/*大小比例*/
+        }
+        h6{
+            position: absolute;/*更新日期位置*/
+            right: 10px;/*更新日期與右側距離*/
+        }
+        .lasttd{
+            font-size: x-small; /*文字大小*/
+            text-align:right;/*文字靠右*/
+        }
+        /*---------項目css----------*/
+
+        .welcome{
+            display: flex;/*切版屬性為flex*/
+            justify-content: center;/*flex置中*/
+            color: ivory;/*文字顏色*/
+            font-size:xx-large;/*文字大小*/
+            font-family: 'Lobster', cursive;/*文字字體*/
+            background-color: rgba(0, 0, 0, 0.2);/*透明黑色背景*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+        }
+        .new{
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+        }
+        .block{
+            display: flex;/*排版*/
+            justify-content: left;/*排版*/
+            background-color: rgba(0, 0, 0, 0.2);/*公告背景*/
+            padding: 10px;/*內部間格*/
+            margin-top: 10px;/*上方外部間格*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+        }
+        .comant{
+            font-size: larger;/*文字大小*/
+            text-align: center;/*文字置中*/
+        }
+        .cube{
+            display: flex;/*排版*/
+            justify-content:space-around;/*排版*/
+            max-width: 1200px;/*最大頁面*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+        }
+        .card{
+            text-align: center;
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin: 20px;/*外部間格*/
+            width: 300px;
+            height: 500px;
+            padding: 0px;
+            border: none;
+            max-width: 100%;
+            min-width: 180px;
+            min-height: 200px;
+            background-image: url(介紹背景.jpg);
+            border-radius: 3%;            
+        }
+
+        .youtubehref{    
+            margin: 5px;
+            display: block;        
+            text-decoration: none;
+            color: rgb(255, 0, 0);
+            font-size: 32px;
+            -webkit-text-stroke: 2px rgb(50,50,50);
+            transition: all 0.3s;
+        }
+        .twitterhref{
+            margin: 5px;
+            display: block;
+            text-decoration: none;
+            color: rgb(0, 132, 255);
+            font-size: 32px;
+            -webkit-text-stroke: 2px rgb(50,50,50);
+            transition: all 0.3s;
+        }
+        .gmailhref{
+            margin: 5px;
+            display: block;
+            text-decoration: none;
+            color: rgb(255, 255, 0);
+            font-size: 32px;
+            -webkit-text-stroke: 2px rgb(50,50,50);
+            transition: all 0.3s;
+        }
+
+        .twitter{
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin: 20px;/*外部間格*/                   
+        }
+        .menuicon{            
+            position: fixed;/*絕對位置*/
+            bottom: -5%;/*下方絕對位置*/
+            left: 25%;/*左方絕對位置*/         
+        }
+        .menu{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -190px;/*下方絕對位置*/
+            left:25%;/*左方絕對位置*/
+            background-color: rgba(155, 155, 155, 0.75);/*菜單背景*/
+            color: black;/*菜單文字顏色*/
+            font-size:larger;/*文字大小*/
+            padding: 20px;/*內部間格*/
+            width: 10%;/*多餘空間大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 1s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+            
+        }
+        .menurwd{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -150px;/*絕對下方位置*隱藏*/
+            left:1px;/*絕對右方位置*/
+            background-color: rgba(255, 255, 255, 0.295);/*菜單背景*/
+            color: black;/*菜單文字*/
+            text-decoration:underline;/*文字底線*/
+            font-size:x-small;/*文字大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 1s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+        }
+
+        ul:hover{/*懸停選擇器*/
+            background-color: rgb(255, 255, 255);
+        }
+        .gmailhref:hover{
+            background-color: rgba(255, 255, 0, 0.5);
+        }
+        .twitterhref:hover{
+            background-color: rgb(0, 132, 255,0.5);;
+        }
+        .youtubehref:hover{
+            background-color: rgb(255, 0, 0,0.5);
+        }
+        
+        ul{
+            padding: 0%;
+            transition: 0.3s;
+        }
+
+        @media(max-width:1100px){/*rwd<1100*/
+        }
+
+        @media(max-width:650px){/*rwd<650*/
+            .welcome {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .new {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .cube {
+                display: block;
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .twitter{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .card{
+                margin-left:4%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .twitters{
+                display: none;/*隱藏*/
+            }
+            .menuicon{
+                display: none;/*隱藏*/
+            }
+            .menu{
+                display: none;/*隱藏*/
+            }
+            .menurwd{
+               bottom: -80px;/*絕對位置下方距離*/
+            }
+        }
+
+    </style>
+</head>
+<body id=inbody>
+    <!--------------------歡迎標題-------------------->  
+    <div class="welcome">
+        WELCOME&ensp;S.G.NOTE
+    </div>
+    <!--------------------歡迎標題-------------------->  
+    <!--------------------公告頁面-------------------->  
+    <div class="new">
+        <div class="block">
+            <table >
+                <tr>
+                    <td class="comant">最新公告</td>
+                </tr>
+                <tr><td><hr/></td></tr>
+                <tr>
+                    <td><!--公告內容12列為佳-->
+                        2021/05/20網站首頁製作完成<br>
+                        2021/05/21網站首頁手機響應式頁面製作完成<br>
+                        2021/05/22網站專欄頁面製作完成<br>
+                        2021/05/23網站專欄頁面手機響應式頁面製作完成<br>
+                        2021/05/23如何成為vtuber2021說明初稿完成<br>
+                        2021/05/24專欄主題設想，增設vtuber專欄<br>
+                        2021/05/25修該專欄頁面載入動畫及vtuber專欄內容填充<br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--------------------公告頁面-------------------->    
+    <!--------------------推特透明左框&推特-------------------->
+    <div class="cube">
+        <div class="card">
+            <a class="youtubehref" href="https://www.youtube.com/channel/UCTsfo0Wfr4zon81yoRCtLaQ">Youtube</a>
+            <a class="twitterhref" href="https://twitter.com/shirogamiyamiko">Twitter</a>
+            <a class="gmailhref" href="mailto:sirogamiyamiko@gmail.com">Gmail</a>
+
+        </div>
+        <div class="twitter">
+            <a class="twitter-timeline" 
+            data-lang="zh-tw" data-width="300" data-height="500" data-dnt="true" data-theme="dark" 
+            href="https://twitter.com/shirogamiyamiko?ref_src=twsrc%5Etfw">Tweets by shirogamiyamiko</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+    <!--------------------推特透明左框&推特-------------------->
+    <!--------------------看板娘--------------------> 
+    <div class="menuicon" >
+        <img   style="width: 50%" src="MENUOVER.png">
+    </div>
+    <!--------------------看板娘--------------------> 
+    <!--------------------電腦版菜單--------------------> 
+    <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+        <h3 class="comant">MENU</h3>
+            
+        <ul class="comant">首頁</ul>            
+            
+        <ul class="comant">前端語言NOTE</ul>            
+            
+        <ul class="comant">VTUBER</ul>
+    </div>
+    <!--------------------電腦版菜單--------------------> 
+    <!--------------------rwd版菜單--------------------> 
+    <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        
+            
+        <h3 class="comant">MENU</h3>
+            
+        <ul class="comant">首頁</ul>            
+            
+        <ul class="comant">前端語言NOTE</ul>            
+            
+        <ul class="comant">VTUBER</ul>
+                        
+        
+    </div>
+    <!--------------------rwd版菜單--------------------> 
+    <script>
+        //電腦版出菜單函式------------------------------
+        function openmenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="5px"
+            console.log("test openmenu")
+        }
+
+        //電腦版收菜單函式------------------------------
+        function closemenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="-190px"
+            console.log("test closemenu")
+        }
+
+        //rwd版出菜單函式------------------------------
+        function openmenurwd(){
+            let menurwdid=document.querySelector('#menurwdid');
+            menurwdid.style.bottom="2px"
+        }
+
+        //rwd版收菜單函式------------------------------
+        function closemenurwd(){
+            let menurwdid=document.querySelector('#menurwdid');
+            menurwdid.style.bottom="-80px"
+        }
+
+        //網頁載入動畫函式------------------------------
+        window.onload=function(){
+            let inbody=document.getElementById("inbody");
+            inbody.style.opacity=1
+            console.log("inbody")
+        }
+
+
+    </script>
+</body>
+<!--------------------------------------------------項目框
+
+    <div class="block">
+            <div>
+                <img src="YELLOW.png">              標題圖片
+            </div>
+            <table width="100%">
+                <tr>
+                    <td>天氣</td>                   大標題                           
+                </tr>
+                <tr><td><hr/></td></tr>             橫線
+                <tr>
+                    <td>verygood<br/>
+                        verygood<br/>
+                        verygood<br/>
+                    </td>                           預覽
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE,VIDEO&ensp;最後更新日期:2021/05/19</td>     最後更新日期
+                </tr>
+            </table>
+        </div>
+        
+        
+
+        <div class="block">
+            <div>
+                <img src="YELLOW.png">
+            </div>
+            <table width="100%">
+                <tr>
+                    <td>天氣</td>                         
+                </tr>
+                <tr><td><hr/></td></tr>
+                <tr>
+                    <td>verygood<br/>
+                        verygood<br/>
+                        verygood<br/>
+                    </td>               
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE,VIDEO&ensp;最後更新日期:2021/05/19</td>
+                </tr>
+            </table>
+        </div>
+
+
+
+--------------------------------------------------------------------->
+</html>
