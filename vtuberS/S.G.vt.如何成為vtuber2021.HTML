@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.G.vtuber</title>
+    <title>S.G.vt.如何成為vtuber 2021更新版</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;英文-->
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;中文-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"><!--引入外部字體的連結;中文-->
     <style>
-        body{
+         body{
             background-image: url(圖片素材/vt分頁背景.png);
             margin: 0%;
             font-family:'Varela Round', sans-serif, 'Noto Sans TC', sans-serif;/*文章預設文字*/
@@ -20,8 +20,6 @@
             opacity: 0;/*可視程度，頁面載入動畫*/
             transition:opacity 1s;/*頁面載入動畫花費秒數*/
         }
-
-
         .welcome{
             display: flex;/*切版屬性為flex*/
             justify-content: center;/*flex置中*/
@@ -33,44 +31,24 @@
             margin-right: 25%; /*右外邊界*/
             box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
         }
-
-        img{
-            border-radius: 25%;/*圓角*/
+        .heanline{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+            font-size:x-large;/*文字大小*/
+            text-align: center;
         }
-        table{
-            padding: 5px;/*與內間格*/
-            width: 100%;/*大小比例*/
-        }
-        h6{
-            position: absolute;/*更新日期位置*/
-            right: 10px;/*更新日期與右側距離*/
-        }
-        .firsttd{
-            font-size:large;/*文字大小*/
-            background-color: rgb(50,50,50);
-        }
-        .lasttd{
-            font-size: x-small; /*文字大小*/
-            text-align:right;/*文字靠右*/
-        }
-        .new{
+        .note{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
             margin-left:25%;/*左外邊界*/
             margin-right: 25%; /*右外邊界*/
             max-width: 1200px;/*最大版面*/
             flex-wrap: wrap;/*自動換行*/
         }
-        .block{
-            text-decoration:none;/*文字底線取消*/
-            color: ivory;/*文字顏色*/
-            display: flex;/*排版*/
-            justify-content: left;/*排版*/
-            background-color: rgba(0, 0, 0, 0.2);/*公告背景*/
-            padding: 10px;/*內部間格*/
-            margin-top: 10px;/*上方外部間格*/
-            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
-            transition: 0.3s;/*動畫時間*/
-        }
-
         /*menu class--------------------------------------*/
         .comant{
             font-size: larger;/*文字大小*/
@@ -124,13 +102,7 @@
             text-decoration: none;
         }
         /*menu class--------------------------------------*/
-
-        a:hover{
-            background-color: rgba(0, 0, 0, 0.658);/*背景顏色*/
-            cursor: pointer;/*滑鼠樣式*/
-        }
-
-        @media(max-width:1910px){/*rwd<1910*/
+        @media(max-width:1910px){/*rwd<1910*/            
             .menuicon{
                 display: none;/*隱藏*/
             }
@@ -152,18 +124,13 @@
                 margin-left:5%;/*左外邊界*/
                 margin-right: 5%; /*右外邊界*/
             }
-            .block{
-                display: block;
-                padding: 5px;
-                text-align: center;
+            .heanline{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
             }
-            .firsttd{
-                padding: 0px;  
-                background-color: rgb(50,50,50);              
-            }
-            .lasttd{
-                font-size:1%;
-                text-align: center;
+            .note{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
             }
             img{
                 text-align: center;
@@ -175,11 +142,10 @@
                 display: none;/*隱藏*/
             }
             .menurwd{
-               bottom: -190px;/*絕對位置下方距離*/
+            bottom: -190px;/*絕對位置下方距離*/
             }
             
         }
-
     </style>
 </head>
 <body id=inbody>
@@ -188,55 +154,75 @@
         WELCOME&ensp;S.G.NOTE
     </div>
     <!--------------------歡迎標題-------------------->
-    <div class="new">
-        <!----------------專欄樣式
-        <a class="block" href="">
-            <div>
-                <img src="YELLOW.png">
-            </div>
-            <table>
-                <tr>
-                    <td class="firsttd">天氣</td>                         
-                </tr>
-                <tr>
-                    <td class="lasttd"> TYPE:&ensp;NOTE,VIDEO|最後更新日期:2021/05/19</td>
-                </tr>
-                <tr>
-                    <td>verygood<br/>
-                        verygood<br/>
-                        verygood<br/>
-                    </td>               
-                </tr>
-            </table>
-        </a>
-        -------------------專欄樣式-------------------->
+    <!----------------------內文---------------------->
+    <p class="heanline">
+        如何成為vtuber 2021更新版
+    </p>
+    <div class="note">
+        
+        在2020/4我發了第一支標題是如何成為vtuber的影片，也是我回響最高的影片，現在一年過去了，做法多多少少有些改動，其實我一直有打算更新這方面的資訊，但是又不想用以往的方式去呈現，所以一直沒有做w<br>
+        這次藉由S.G.NOTE正式上線，就打算發一篇這方面內容的更新，廢話有點太多了，那就直接開始~
+        <br>
+        硬體方面說明<br>
+        硬體方面老實說，基本大方向都不變，目前我爬文看來，最大的更動就是鏡頭可以用手機的鏡頭代替，也算是幫各位省出道成本了w<br>
+        具體如下:<br>
+        PC<br>
+        視訊鏡頭OR iphone10 up<br>
+        耳機&麥克風OR耳麥<br>
+        錄音介面(選要)<br>
+        擷取卡(選要)<br>
+        <br>
+        軟體方面說明<br>
+        軟體方面最大的更動是facerig軟體因為更新服務結束，目前我所知道應該是用vtuber studio會比較主流，當然還有其他動態捕捉軟體，好比說live2d viewer之類的，這方面資訊很多，可以上yahoo.jp搜尋”vtuberやり方“就可以知道很多這方面的資訊了<br>
+        具體如下:<br>
+        Vtuber studio(steam)<br>
+        Vtuber studio(iphone10以上鏡頭)<br>
+        Obs直播軟體<br>
+        *因為大部分的人都不會自己做模型，所以我就不放模型製作軟體了<br>
+        *直播一樣使用強大的obs即可<br>
+        <br>
+        硬體的挑選:<br>
+        PC:近期買電腦的人應該都很尷尬，在區塊鏈經濟的革命下，市面上幾乎沒有買顯示卡的選擇權，SSD的部分也是，又貴CP直又低…老實說這個真的很尷尬，這篇文章發出來估計在挑選上也買不到像樣的顯示卡，所以我也不想多做PC的介紹了，總之CPU還是跟以往一樣選AMD的吧!畢竟我大AMD打的牙膏場頭破血流，其他的顯卡、SSD就隨緣吧，身邊有好的入手管道就多關注吧<br>
+        <br>
+        鏡頭&手機:<br>
+        這個也是尷尬了，在疫情火熱之際，線上教學變成國民教育解方，導致視訊設備也是賣得很好，選項上不如以往豐富，挑選基本上還是以有品牌且720P30FPS以上為標準。<br>
+        BUT!<br>
+        現在我覺得直接用手機鏡頭代替也是很好的選擇，可以間接省下一顆鏡頭的成本。(IOS尤佳，如何使用之後考慮再發一篇vtuber studio的使用說明)<br>
+        <br>
+        耳機&麥克風or耳麥:<br>
+        2020那支影片底下我其實是不推薦耳麥的，但是後來看了網路上的一些文章，我覺得直播、製片環境，以及自身聲音的調整，會是比較直接重要的，環境跟施工一樣，無論哪種麥克風基本上都是沒救，結論上不管是選擇哪種方式，只要調整的好，我覺得都是相當不錯的。<br>
+        <br>
+        錄音介面:<br>
+        錄音介面的定位一直在非常推薦，但又很難說是必要的產品，因為真的很方便，直接用物理按鍵去進行靈敏度跟聲音的調整，體感會比在作業系統上設定好很多。<br>
+        <br>
+        *耳機&麥克風，錄音介面挑選可以到台灣高空上面找組合包，比較省事<br>
+        <br>
+        擷取卡:<br>
+        一樣是選要，主要判斷標準是有沒有想播主機遊戲，PS5、SWITCH，如果預算許可，圓剛的GC570D真的可以考慮!雙HDMI訊源輸入真的很強大!<br>
+        <br>
+        軟體就沒什麼好說的，咻咻啪啪就弄好了~<br>
+        如果得太多人在軟體上有問題，我再補文章好了，就這樣~</p>
+        
 
-        <a class="block" href="vtuberS/S.G.vt.如何成為vtuber2021.HTML">
-            <div>
-                <img src="圖片素材/2021如何成為v.jpg">
-            </div>
-            <table>
-                <tr>
-                    <td class="firsttd">NO.1&ensp;如何成為vtuber 2021更新版</td>                         
-                </tr>
-                <tr>
-                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/05/23</td>
-                </tr>
-                <tr>
-                    <td>在2020/4我發了第一支標題是如何成為vtuber的影片，也是我回響最高的影片<br/>
-                        現在一年過去了，做法多多少少有些改動<br/>
-                        其實我一直有打算更新這方面的資訊，但是又不想用以往的方式去呈現，所以一直沒有做...<br/>
-                    </td>               
-                </tr>
-            </table>
-        </a>
 
-        <!--------------------看板娘--------------------> 
-        <div class="menuicon" >
-            <img   style="width: 50%" src="圖片素材/MENUOVER.png">
-        </div>
-        <!--------------------看板娘--------------------> 
-        <!--------------------電腦版菜單--------------------> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!----------------------內文---------------------->
+    <!--------------------看板娘--------------------> 
+    <div class="menuicon" >
+        <img   style="width: 50%" src="圖片素材/MENUOVER.png">
+    </div>
+    <!--------------------看板娘--------------------> 
+    <!--------------------電腦版菜單--------------------> 
     <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
         <h3 class="comant">MENU</h3>
             
@@ -262,9 +248,6 @@
         
     </div>
     <!--------------------rwd版菜單--------------------> 
-
-    </div>
-    
     <script>
         //網頁載入動畫函式------------------------------
         window.onload=function(){
@@ -298,10 +281,6 @@
             let menurwdid=document.querySelector('#menurwdid');
             menurwdid.style.bottom="-190px"
         }
-
-
-
     </script>
-    
 </body>
 </html>
