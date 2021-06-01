@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="如何成為vtuber,vtuber,中文vtuber">
+    <title>S.G.vt.如何成為vtuber 2021更新版</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;英文-->
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"><!--引入外部字體的連結;英文-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;中文-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"><!--引入外部字體的連結;中文-->
+    <style>
+         body{
+            background-image: url(../圖片素材/vt分頁背景.png);
+            margin: 0%;
+            font-family:'Varela Round', sans-serif, 'Noto Sans TC', sans-serif;/*文章預設文字*/
+            color: ivory;/*文章預設文字顏色*/
+            opacity: 0;/*可視程度，頁面載入動畫*/
+            transition:opacity 1s;/*頁面載入動畫花費秒數*/
+        }
+        .welcome{
+            display: flex;/*切版屬性為flex*/
+            justify-content: center;/*flex置中*/
+            color: ivory;/*文字顏色*/
+            font-size:xx-large;/*文字大小*/
+            font-family: 'Lobster', cursive;/*文字字體*/
+            background-color: rgba(0, 0, 0, 0.2);/*透明黑色背景*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+        }
+        .heanline{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+            font-size:x-large;/*文字大小*/
+            text-align: center;
+        }
+        .note{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+        }
+        /*menu class--------------------------------------*/
+        .comant{
+            font-size: larger;/*文字大小*/
+            text-align: center;/*文字置中*/
+            color: black;/*文字顏色*/
+            text-decoration: none;/*底線取消*/
+        }
+        .menuicon{            
+            position: fixed;/*絕對位置*/
+            bottom: -5%;/*下方絕對位置*/
+            left: 25%;/*左方絕對位置*/         
+        }
+        .menu{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -190px;/*下方絕對位置*/
+            left:25%;/*左方絕對位置*/
+            background-color: rgba(155, 155, 155, 0.75);/*菜單背景*/
+            color: black;/*菜單文字顏色*/
+            font-size:larger;/*文字大小*/
+            padding: 20px;/*內部間格*/
+            width: 10%;/*多餘空間大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 1s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+            
+        }
+        .menurwd{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -350px;/*絕對下方位置*隱藏*/
+            left:0px;/*絕對右方位置*/
+            background-color: rgba(255, 255, 255);/*菜單背景*/
+            color: black;/*菜單文字*/
+            text-decoration:none;/*文字底線*/
+            font-size:larger;/*文字大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 1s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+            padding: 10px;
+        }
+
+        ul:hover{/*懸停選擇器*/
+            background-color: rgb(255, 255, 255);
+        }        
+        ul{
+            padding: 0%;
+            transition: 0.3s;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*menu class--------------------------------------*/
+        @media(max-width:1910px){/*rwd<1910*/            
+            .menuicon{
+                display: none;/*隱藏*/
+            }
+            .menu{
+                display: none;/*隱藏*/
+            }
+            .menurwd{
+                bottom: -190px;/*絕對位置下方距離*/
+            }
+            img{
+                width: 50%;
+            }
+        }
+
+        @media(max-width:1210px){/*rwd<1210*/
+
+            .welcome {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .new {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .heanline{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .note{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            img{
+                text-align: center;
+                width: 100%;
+            }
+            .menuicon{
+                display: none;/*隱藏*/
+            }
+            .menu{
+                display: none;/*隱藏*/
+            }
+            .menurwd{
+                bottom: -190px;/*絕對位置下方距離*/
+            }
+            
+        }
+    </style>
+</head>
+<body id=inbody>
+    <!--------------------歡迎標題-------------------->  
+    <div class="welcome">
+        WELCOME&ensp;S.G.NOTE
+    </div>
+    <!--------------------歡迎標題-------------------->
+    <!----------------------內文---------------------->
+    <p class="heanline">
+        如何成為vtuber 2020問題總集
+    </p>
+    <div class="note">
+        
+        <br/><br/>
+        問題一:2d模型的取得管道<br/><br/>
+        在講取得管道前，應該要先理解模型是怎麼來的<br/><br/>
+        首先，模型的製作要經過插畫，再來才是模型的製作<br/><br/>
+        取得的方式分成兩種，一種是直接買現成的，另一種是逐步委託處理<br/><br/>
+        逐步委託處理的部分又有分自己處理跟一條龍的合作管道<br/><br/>
+        講了這麼多，那就一步一步詳細解釋<br/><br/><br/>
+
+        一、直接購買現成的模型<br/><br/>
+        這部分台灣目前還沒有很普及<br/>
+        在我知道的範圍內中文圈只有兩種管道可以買到現成模型<br/>
+        一個是在社群上，像是有人會以推文的方式以個人名義販售<br/>
+        <br/><br/>
+        第二個是模型師手上，可能會有模型師放在自己的頁面販售<br/>
+        但是這兩點都不是常駐的，也就是說，沒有固定生產現成的模型出來賣<br/>
+        原因無他，模型在台灣市場不是很廣泛，且模型是個很客製化的東西，如果無法滿足客人審美，是非常有滯銷可能的<br/>
+        <br/><br/>
+        但是如果在日本，那又是另一回事了，日本這方面較為成熟，所以是可以在網路上找到現成的模型販售的，舉個例子:<br/>
+        我在yahoo.jp上搜尋”vtuber モデリング　販売“<br/><br/>
+        <img src="../圖片素材/如何成為vtuber2020問題總集圖一.jpg"><br/><br/>
+        基本上就可以看到一些頁面，隨便點一個進去，看到イラスト，底下分類有一個モデリング，點進去就可以看到一些模型的販售資料了<br/>
+        有一些是真的放上來賣的，有一些是放展示品，寫一個大概委託的價格<br/>
+        直接放上來賣的，也有很多的項目可以選，像是加飾品之類的，雖然大部分都是要再加錢<br/>
+        有點類似你點一個套餐，然後選擇飲料換可樂要+5元的那種感覺<br/><br/>
+        <img src="../圖片素材/如何成為vtuber2020問題總集圖二.jpg"><br/><br/><br/>
+
+        二、逐步委託處理<br/><br/>
+        如同第一段所講的，第二種方式是逐步委託處理<br/>
+        這種方式可以做到非常符合自己喜好的模型<br/>
+        因為所有東西都是開工前協調好的<br/>
+        舉凡是:性別、飾品、角色印象…等等<br/><br/>
+        通常會先找到你喜歡繪師，進一步的詢問<br/>
+        但是這樣很麻煩，所以我會推薦另一種方法<br/>
+        通常想做vtuber或是想要有一個模型的人<br/>
+        都是先看過某一個角色，覺得很棒，才有這樣的想法對吧?<br/>
+        那反過來說，為什麼不直接找那個角色的繪師就好呢?<br/>
+        舉例:<br/><br/>
+        以我來說，我會把繪師跟模型師的資訊，放在我有經營的平台的某處，可能是推特或是youtube，像我就是放在我的youtube頻道內的簡介底下<br/>
+        這樣就可以直接確定這位繪師有繪製模型圖的經驗了<br/>
+        <img src="../圖片素材/如何成為vtuber2020問題總集圖三.jpg"><br/><br/>
+
+        那假設是已經有心儀的繪師可是不確定有沒有接委託或是繪製模型圖的經驗呢?<br/>
+        很簡單，直接把繪師的名子丟到google上面<br/>
+        既然是繪師，肯定有放作品的平台或帳號通常都會些是否有接受委託(依賴)，有的話直接透過電子郵件或是繪師指定的方式聯絡即可<br/>
+        以kashi先生的pixiv舉例:<br/>
+        <img src="../圖片素材/如何成為vtuber2020問題總集圖四.jpg"><br/><br/><br/>
+
+        模型師的部分，會比繪師難找一點，我是建議直接找到一個你喜歡的現役vtuber，然後看他的模型師是誰再去聯絡<br/>
+        不然就是直接上google搜尋”vtuber模型製作”去尋找 <br/><br/><br/>
+
+        三、一條龍的合作管道<br/>
+        這部分其實就跟上面很像，只是有些繪師跟模型師有合作的關係，為了是要讓工作更有效率，成品更好<br/>
+        因為拆圖的部分，繪師的拆圖可能會和模型師預想的有落差，模型師雖然沒有明講，但是收到圖大多數都會先確認圖層，然後大概整理一下圖層<br/>
+        合作的好處就是可以極大效率的進行簡化這個步驟<br/><br/>
+
+        如果是有合作的繪師跟模型師，通常都是已經有經驗的接案者<br/>
+        一般他們直接在很明顯的地方標示出來，或是再接委託的時候就提出來，跟你確認有沒有意願直接給他們一條龍式的處理，至於收費方式就是看他們規定了<br/>
+        <img src="../圖片素材/如何成為vtuber2020問題總集圖五.jpg"><br/><br/>
+
+
+
+        <br/><br/>
+        問題二:有app可以進行臉部的追蹤嗎? <br/><br/>
+        再如何成為vtuber2021裡面已經有類似解答了，可以參考<br/>
+        會有這個問題大概都是在知道hololive是用這種方式進行的，所以會提出來<br/>
+        但是hololive的軟體我推測應該是他們公司自己內部的，並沒有開放給一般人使用<br/>
+        所以一般人要用一樣使用vtuber studio即可(ios系統確定可行，安卓沒研究)<br/>
+        <img src="../圖片素材/vtuberstudio.jpg"><br/><br/><br/><br/>
+
+        問題三:模型的價格<br/><br/>
+        大家應該都發現了<br/>
+        模型的價格其實是沒有很公開透明的<br/>
+        原因很簡單，這種藝術類的東西，價格是很難界定的<br/>
+        好比說一幅畫，作者成名前的價格跟成名後的價格是不一樣的<br/>
+        模型也是同理<br/>
+        影響價格的因素，除了技巧，可能還包含名氣，或是接案經驗…等等<br/><br/>
+
+        總之委託前先詳細的確認價格”區間”<br/>
+        會說區間的原因是因為，一般來說就算是到了談價階段，也未必會直接給你一個很明確的數字<br/>
+        畢竟繪製的途中會去修正，作品完成可能你覺得有不足的地方也還要改<br/>
+        這些事情都要花時間處理，所以就會影響到價格<br/>
+        這件事我也沒辦法多談，藝術的東西價格是主觀的，只能呼籲尊重專業<br/><br/><br/><br/>
+
+
+
+        問題四:不想用麥克風加耳機，耳麥可以嗎?<br/><br/>
+        同樣在如何成為vtuber2021中有解答<br/>
+        沒有什麼東西是不行的，重點在於呈現出來的效果<br/><br/>
+
+        一個剛出道的個人勢用幾十萬的配備<br/>
+        跟一個職業聲優用千元出頭的配備<br/>
+        你說誰的效果好?別人變身器裝在喉嚨裡怎麼跟他比?<br/><br/>
+
+        一個國家音樂廳隔音級別的房間<br/>
+        跟一個棚子架在工廠旁邊的環境<br/>
+        這種情況已經不是用設備去解決了<br/><br/>
+
+        這樣說大概了解了吧，看自己預算<br/>
+        解決最根本的問題、做在能力範圍內做的到的事才是重點
+
+
+
+        
+        
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!----------------------內文---------------------->
+    <!--------------------看板娘--------------------> 
+    <div class="menuicon" >
+        <img   style="width: 50%" src="../圖片素材/MENUOVER.png">
+    </div>
+    <!--------------------看板娘--------------------> 
+    <!--------------------電腦版菜單--------------------> 
+    <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+        <h3 class="comant">MENU</h3>
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+    </div>
+    <!--------------------電腦版菜單--------------------> 
+    <!--------------------rwd版菜單--------------------> 
+    <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        
+        
+            <h3 class="comant">MENU</h3>
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+                       
+        
+    </div>
+    <!--------------------rwd版菜單-------------------->   
+    <script>
+        //網頁載入動畫函式------------------------------
+        window.onload=function(){
+            let inbody=document.getElementById("inbody");
+            inbody.style.opacity=1
+            console.log("inbody")
+        }
+
+        //電腦版出菜單函式------------------------------
+        function openmenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="5px"
+            console.log("test openmenu")
+        }
+
+        //電腦版收菜單函式------------------------------
+        function closemenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="-190px"
+            console.log("test closemenu")
+        }
+
+        //rwd版出菜單函式------------------------------
+        function openmenurwd(){
+            let menurwdid=document.querySelector('#menurwdid');
+            menurwdid.style.bottom="2px"
+        }
+
+        //rwd版收菜單函式------------------------------
+        function closemenurwd(){
+            let menurwdid=document.querySelector('#menurwdid');
+            menurwdid.style.bottom="-190px"
+        }
+    </script>
+</body>
+</html>
