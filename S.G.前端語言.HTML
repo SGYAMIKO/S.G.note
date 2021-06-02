@@ -22,7 +22,6 @@
             transition:opacity 1s;/*頁面載入動畫花費秒數*/
         }
 
-
         .welcome{
             display: flex;/*切版屬性為flex*/
             justify-content: center;/*flex置中*/
@@ -35,7 +34,7 @@
             box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
         }
 
-        img{
+        img#mk{
             border-radius: 25%;/*圓角*/
         }
         table{
@@ -70,6 +69,22 @@
             margin-top: 10px;/*上方外部間格*/
             box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
             transition: 0.3s;/*動畫時間*/
+        }
+        .heanline{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+            font-size:x-large;/*文字大小*/
+            text-align: center;
+        }
+        .note{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
         }
 
         /*menu class--------------------------------------*/
@@ -211,10 +226,10 @@
             </table>
         </a>
         -------------------專欄樣式-------------------->
-
-        <a class="block" href="https://sgyamiko.github.io/S.G.note/前端語言S/meta標籤應用.HTML">
+        <!---------------------專欄---------------------->
+        <a class="block" href="#Title、Meta標籤應用">
             <div>
-                <img src="圖片素材/meta標籤應用圖.png">
+                <img id=mk src="圖片素材/meta標籤應用圖.png">
             </div>
             <table>
                 <tr>
@@ -233,9 +248,9 @@
         </a>
         
 
-        <a class="block" href="https://sgyamiko.github.io/S.G.note/前端語言S/超連結標籤應用.HTML">
+        <a class="block" href="#href標籤應用">
             <div>
-                <img src="圖片素材/href應用圖0.jpg">
+                <img id=mk src="圖片素材/href應用圖0.jpg">
             </div>
             <table>
                 <tr>
@@ -252,6 +267,88 @@
                 </tr>
             </table>
         </a>
+        <!---------------------專欄---------------------->
+        <!---------------------Title、Meta標籤應用---------------------->
+        <p id="Title、Meta標籤應用" class="heanline">
+            Title、Meta標籤應用
+        </p>
+        <div class="note">
+            
+            Title標籤顯示視窗文字<br/>
+            <img src="圖片素材/title標籤應用圖.jpg"><br/>
+            <br/><br/><br/>
+            
+            <img src="圖片素材/meta標籤應用圖一.jpg"><br/>
+            設一個meta標籤為關鍵字(keywords)<br/>
+            Content=接要的關鍵字，關鍵字多個可用,隔開<br/>
+            <br/><br/><br/>
+            <img src="圖片素材/meta標籤應用圖二.jpg"><br/>
+            設一個meta標籤為網站描述(description)<br/>
+            Content=”描述的內容”<br/>
+            描述內容顯示位置如下圖<br/>
+            <img src="圖片素材/meta標籤應用圖三.jpg"><br/>
+            <br/><br/><br/>
+            <img src="圖片素材/meta標籤應用圖四.jpg"><br/>
+            設一個meta標籤為編碼格式<br/>
+            Charset=”編碼類型”<br/>
+            <br/><br/><br/>
+            <img  src="圖片素材/meta標籤應用圖五.jpg"><br/>
+            清除快取meta標籤<br/>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!---------------------Title、Meta標籤應用---------------------->
+        <!---------------------href標籤應用---------------------->
+        <p id="href標籤應用"class="heanline">
+            href標籤應用
+        </p>
+        <div class="note">
+            
+            <br/><br/>
+            <br/><br/>
+            網址:<br/>
+            <img src="圖片素材/href應用圖1.jpg"><br/>
+            <br/><br/><br/><br/>
+            路徑:<br/>
+            <img src="圖片素材/href應用圖2.jpg"><br/>
+            以當前HTML文件為起點<br/>
+            找到目標HTML的母資料夾<br/>
+            以./或../(.代表往前一層路經)以此類推<br/>
+            到母資料夾位置後再/後面加入路徑資料夾或HTML檔案<br/>
+            <img src="圖片素材/href應用圖3.jpg"><br/>
+            <br/><br/><br/><br/>
+            新增視窗打開超連結作法:<br/>
+            屬性target=””<br/>
+            _blank在新視窗中開啟連結<br/>
+            <img src="圖片素材/href應用圖4.jpg"><br/>
+            _self默認<br/>
+            <img src="圖片素材/href應用圖5.jpg"><br/>
+            <br/><br/><br/><br/>
+            利用href跳轉至頁面最上方<br/>
+            <img src="圖片素材/href應用圖6.jpg"><br/>
+            利用id屬性，跳展制任何位置<br/>
+            <img src="圖片素材/href應用圖7.jpg"><br/>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!---------------------href標籤應用---------------------->
+        
 
         <!--------------------看板娘--------------------> 
         <div class="menuicon" >
@@ -262,11 +359,11 @@
         <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
             <h3 class="comant">MENU</h3>
                 
-            <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            <a href="http://www.sgnote.ml/S.G.HTML"><ul class="comant">首頁</ul></a>            
                 
-            <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
+            <a href="http://www.sgnote.ml/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
                 
-            <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+            <a href="http://www.sgnote.ml/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
         </div>
         <!--------------------電腦版菜單--------------------> 
         <!--------------------rwd版菜單--------------------> 
@@ -275,12 +372,12 @@
             
                 <h3 class="comant">MENU</h3>
                     
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+                <a href="http://www.sgnote.ml/S.G.HTML"><ul class="comant">首頁</ul></a>            
                     
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
+                <a href="http://www.sgnote.ml/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
                     
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
-                           
+                <a href="http://www.sgnote.ml/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+                        
             
         </div>
         <!--------------------rwd版菜單-------------------->  
