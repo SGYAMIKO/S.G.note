@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="vtuber,台灣vtuber,白神,白神やみこ,白神筆記,s.g.note,前端語言,html,css,javascript">
-    <title>S.G.vtuber</title>
+    <meta name="keywords" content="meta標籤應用,meta標籤,html語法">
+    <title>href標籤應用</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;英文-->
@@ -13,16 +13,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;中文-->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"><!--引入外部字體的連結;中文-->
     <style>
-        body{
-            background-image: url(圖片素材/前端語言分頁背景.png);
+        
+         body{
+            background-image: url(../圖片素材/前端語言分頁背景.png);
             margin: 0%;
             font-family:'Varela Round', sans-serif, 'Noto Sans TC', sans-serif;/*文章預設文字*/
             color: ivory;/*文章預設文字顏色*/
             opacity: 0;/*可視程度，頁面載入動畫*/
             transition:opacity 1s;/*頁面載入動畫花費秒數*/
         }
-
-
         .welcome{
             display: flex;/*切版屬性為flex*/
             justify-content: center;/*flex置中*/
@@ -34,44 +33,24 @@
             margin-right: 25%; /*右外邊界*/
             box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
         }
-
-        img{
-            border-radius: 25%;/*圓角*/
+        .heanline{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+            font-size:x-large;/*文字大小*/
+            text-align: center;
         }
-        table{
-            padding: 5px;/*與內間格*/
-            width: 100%;/*大小比例*/
-        }
-        h6{
-            position: absolute;/*更新日期位置*/
-            right: 10px;/*更新日期與右側距離*/
-        }
-        .firsttd{
-            font-size:large;/*文字大小*/
-            background-color: rgb(50,50,50);
-        }
-        .lasttd{
-            font-size: x-small; /*文字大小*/
-            text-align:right;/*文字靠右*/
-        }
-        .new{
+        .note{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
             margin-left:25%;/*左外邊界*/
             margin-right: 25%; /*右外邊界*/
             max-width: 1200px;/*最大版面*/
             flex-wrap: wrap;/*自動換行*/
         }
-        .block{
-            text-decoration:none;/*文字底線取消*/
-            color: ivory;/*文字顏色*/
-            display: flex;/*排版*/
-            justify-content: left;/*排版*/
-            background-color: rgba(0, 0, 0, 0.2);/*公告背景*/
-            padding: 10px;/*內部間格*/
-            margin-top: 10px;/*上方外部間格*/
-            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
-            transition: 0.3s;/*動畫時間*/
-        }
-
         /*menu class--------------------------------------*/
         .comant{
             font-size: larger;/*文字大小*/
@@ -125,13 +104,7 @@
             text-decoration: none;
         }
         /*menu class--------------------------------------*/
-
-        a:hover{
-            background-color: rgba(0, 0, 0, 0.658);/*背景顏色*/
-            cursor: pointer;/*滑鼠樣式*/
-        }
-
-        @media(max-width:1910px){/*rwd<1910*/
+        @media(max-width:1910px){/*rwd<1910*/            
             .menuicon{
                 display: none;/*隱藏*/
             }
@@ -140,6 +113,9 @@
             }
             .menurwd{
                 bottom: -190px;/*絕對位置下方距離*/
+            }
+            img{
+                width: 50%;
             }
         }
 
@@ -153,21 +129,17 @@
                 margin-left:5%;/*左外邊界*/
                 margin-right: 5%; /*右外邊界*/
             }
-            .block{
-                display: block;
-                padding: 5px;
-                text-align: center;
+            .heanline{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
             }
-            .firsttd{
-                padding: 0px;  
-                background-color: rgb(50,50,50);              
-            }
-            .lasttd{
-                font-size:1%;
-                text-align: center;
+            .note{
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
             }
             img{
                 text-align: center;
+                width: 100%;
             }
             .menuicon{
                 display: none;/*隱藏*/
@@ -180,7 +152,6 @@
             }
             
         }
-
     </style>
 </head>
 <body id=inbody>
@@ -189,104 +160,85 @@
         WELCOME&ensp;S.G.NOTE
     </div>
     <!--------------------歡迎標題-------------------->
-    <div class="new">
-        <!----------------專欄樣式
-        <a class="block" href="">
-            <div>
-                <img src="YELLOW.png">
-            </div>
-            <table>
-                <tr>
-                    <td class="firsttd">天氣</td>                         
-                </tr>
-                <tr>
-                    <td class="lasttd"> TYPE:&ensp;NOTE,VIDEO|最後更新日期:2021/05/19</td>
-                </tr>
-                <tr>
-                    <td>verygood<br/>
-                        verygood<br/>
-                        verygood<br/>
-                    </td>               
-                </tr>
-            </table>
-        </a>
-        -------------------專欄樣式-------------------->
+    <!----------------------內文---------------------->
+    <p class="heanline">
+        href標籤應用
+    </p>
+    <div class="note">
+        
+        href的使用:<br/><br/>
+        <br/><br/>
+        網址:<br/>
+        <img src="../圖片素材/href應用圖1.jpg"><br/>
+        <br/><br/><br/><br/>
+        路徑:<br/>
+        <img src="../圖片素材/href應用圖2.jpg"><br/>
+        以當前HTML文件為起點<br/>
+        找到目標HTML的母資料夾<br/>
+        以./或../(.代表往前一層路經)以此類推<br/>
+        到母資料夾位置後再/後面加入路徑資料夾或HTML檔案<br/>
+        <img src="../圖片素材/href應用圖3.jpg"><br/>
+        <br/><br/><br/><br/>
+        新增視窗打開超連結作法:<br/>
+        屬性target=””<br/>
+        _blank在新視窗中開啟連結<br/>
+        <img src="../圖片素材/href應用圖4.jpg"><br/>
+        _self默認<br/>
+        <img src="../圖片素材/href應用圖5.jpg"><br/>
+        <br/><br/><br/><br/>
+        利用href跳轉至頁面最上方<br/>
+        <img src="../圖片素材/href應用圖6.jpg"><br/>
+        利用id屬性，跳展制任何位置<br/>
+        <img src="../圖片素材/href應用圖7.jpg"><br/>
 
-        <a class="block" href="https://sgyamiko.github.io/S.G.note/前端語言S/meta標籤應用.html">
-            <div>
-                <img src="圖片素材/meta標籤應用圖.png">
-            </div>
-            <table>
-                <tr>
-                    <td class="firsttd">NO.1&ensp;Title、Meta標籤應用</td>                         
-                </tr>
-                <tr>
-                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/05/31</td>
-                </tr>
-                <tr>
-                    <td>Title標籤顯示視窗文字<br/>
-                        Meta標籤應用<br/>
-                        設一個meta標籤為關鍵字(keywords)...<br/>
-                    </td>               
-                </tr>
-            </table>
-        </a>
         
 
-        <a class="block" href="https://sgyamiko.github.io/S.G.note/前端語言S/href標籤應用.html">
-            <div>
-                <img src="圖片素材/href應用圖0.jpg">
-            </div>
-            <table>
-                <tr>
-                    <td class="firsttd">NO.1&ensp;href標籤應用</td>                         
-                </tr>
-                <tr>
-                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/06/02</td>
-                </tr>
-                <tr>
-                    <td>新增視窗打開超連結作法<br/>
-                        利用href跳轉至頁面最上方<br/>
-                        利用id屬性...<br/>
-                    </td>               
-                </tr>
-            </table>
-        </a>
+        
 
-        <!--------------------看板娘--------------------> 
-        <div class="menuicon" >
-            <img   style="width: 50%" src="圖片素材/MENUOVER.png">
-        </div>
-        <!--------------------看板娘--------------------> 
-        <!--------------------電腦版菜單--------------------> 
-        <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <!----------------------內文---------------------->
+    <!--------------------看板娘--------------------> 
+    <div class="menuicon" >
+        <img   style="width: 50%" src="../圖片素材/MENUOVER.png">
+    </div>
+    <!--------------------看板娘--------------------> 
+    <!--------------------電腦版菜單--------------------> 
+    <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+        <h3 class="comant">MENU</h3>
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
+            
+        <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
+    </div>
+    <!--------------------電腦版菜單--------------------> 
+    <!--------------------rwd版菜單--------------------> 
+    <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        
+        
             <h3 class="comant">MENU</h3>
                 
             <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
                 
-            <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
                 
             <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
-        </div>
-        <!--------------------電腦版菜單--------------------> 
-        <!--------------------rwd版菜單--------------------> 
-        <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
-            
-            
-                <h3 class="comant">MENU</h3>
-                    
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
-                    
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
-                    
-                <a href="https://sgyamiko.github.io/S.G.note/S.G.vt.HTML"><ul class="comant">VTUBER</ul></a>
-                           
-            
-        </div>
-        <!--------------------rwd版菜單-------------------->  
-
+                       
+        
     </div>
-    
+    <!--------------------rwd版菜單-------------------->    
     <script>
         //網頁載入動畫函式------------------------------
         window.onload=function(){
@@ -320,10 +272,6 @@
             let menurwdid=document.querySelector('#menurwdid');
             menurwdid.style.bottom="-190px"
         }
-
-
-
     </script>
-    
 </body>
 </html>
