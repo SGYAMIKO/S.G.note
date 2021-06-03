@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="vtuber,台灣vtuber,白神,白神やみこ,白神筆記,s.g.note,前端語言,html,css,javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>S.G.vtuber</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
@@ -125,7 +128,7 @@
             text-decoration:none;/*文字底線*/
             font-size:larger;/*文字大小*/
             border-radius: 5%;/*圓角*/
-            transition: 1s;/*動畫秒數*/
+            transition: 0.3s;/*動畫秒數*/
             box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
             padding: 10px;
         }
@@ -145,6 +148,11 @@
         a:hover{
             background-color: rgba(0, 0, 0, 0.658);/*背景顏色*/
             cursor: pointer;/*滑鼠樣式*/
+        }
+        @media(min-width:1910px){
+            .menurwd{
+                display: none;/*隱藏*/
+            }
         }
 
         @media(max-width:1910px){/*rwd<1910*/
@@ -449,7 +457,7 @@
         </div>
         <!--------------------電腦版菜單--------------------> 
         <!--------------------rwd版菜單--------------------> 
-        <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" onmouseleave="closemenurwd();">
+        <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" >
             
             
                 <h3 class="comant">MENU</h3>
@@ -494,11 +502,18 @@
             menurwdid.style.bottom="2px"
         }
 
-        //rwd版收菜單函式------------------------------
-        function closemenurwd(){
-            let menurwdid=document.querySelector('#menurwdid');
-            menurwdid.style.bottom="-190px"
-        }
+        //rwd版收菜單函式*jQ------------------------------
+        //function closemenurwd(){
+        //    let menurwdid=document.querySelector('#menurwdid');
+        //    menurwdid.style.bottom="-190px"
+        //}
+
+        $(document).ready(function(){
+                $(window).scroll(function() {
+                    $("#menurwdid").css("bottom",'-190px');
+                    console.log(window)
+                });
+            });
 
 
 
