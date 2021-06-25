@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="vtuber,台灣vtuber,白神,白神やみこ,白神筆記,s.g.note">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <title>S.G.NOTE</title>
+    <link rel="apple-touch-icon" sizes="192x192" href="圖片素材/appleicon2.jpg"><!--蘋果桌面書籤圖示-->
+    <link rel="shortcut icon" sizes="16x16" href="https://truth.bahamut.com.tw/s01/202106/63ae2abe93781231fc9f1fcf04eddd37.JPG"><!--網頁上方標籤圖示-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;站名-->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"><!--引入外部字體的連結;站名-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;英文-->
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"><!--引入外部字體的連結;英文-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"><!--引入外部字體的連結;中文-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet"><!--引入外部字體的連結;中文-->
+    <style>
+        body{
+            background-image: url(圖片素材/vt分頁背景.png);
+            margin: 0%;
+            font-family:'Varela Round', sans-serif, 'Noto Sans TC', sans-serif;/*文章預設文字*/
+            color: ivory;/*文章預設文字顏色*/
+            opacity: 0;/*可視程度，頁面載入動畫*/
+            transition:opacity 1s;/*頁面載入動畫花費秒數*/
+        }
+
+
+        .welcome{
+            display: flex;/*切版屬性為flex*/
+            justify-content: center;/*flex置中*/
+            color: ivory;/*文字顏色*/
+            font-size:xx-large;/*文字大小*/
+            font-family: 'Lobster', cursive;/*文字字體*/
+            background-color: rgba(0, 0, 0, 0.2);/*透明黑色背景*/
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+        }
+
+        img#mk{
+            border-radius: 25%;/*圓角*/
+        }
+        table{
+            padding: 5px;/*與內間格*/
+            width: 100%;/*大小比例*/
+        }
+        h6{
+            position: absolute;/*更新日期位置*/
+            right: 10px;/*更新日期與右側距離*/
+        }
+        .firsttd{
+            font-size:large;/*文字大小*/
+            background-color: rgb(50,50,50);
+        }
+        .lasttd{
+            font-size: x-small; /*文字大小*/
+            text-align:right;/*文字靠右*/
+        }
+        .new{
+            margin-left:25%;/*左外邊界*/
+            margin-right: 25%; /*右外邊界*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+        }
+        .block{
+            text-decoration:none;/*文字底線取消*/
+            color: ivory;/*文字顏色*/
+            display: flex;/*排版*/
+            justify-content: left;/*排版*/
+            background-color: rgba(0, 0, 0, 0.2);/*公告背景*/
+            padding: 10px;/*內部間格*/
+            margin-top: 10px;/*上方外部間格*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            transition: 0.3s;/*動畫時間*/
+        }
+        .heanline{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            margin-left:10%;/*左外邊界*/
+            margin-right: 10%; /*右外邊界*/
+            margin-top: 100px;
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+            font-size:x-large;/*文字大小*/
+            text-align: center;
+        }
+        .note{
+            background-color: rgba(0, 0, 0, 0.750);/*透明黑色背景*/
+            box-shadow:  5px 5px 5px 0px rgba(255, 255, 255, 0.425);/*陰影*/
+            max-width: 1200px;/*最大版面*/
+            flex-wrap: wrap;/*自動換行*/
+        }
+
+        /*menu class--------------------------------------*/
+        .comant{
+            font-size: larger;/*文字大小*/
+            text-align: center;/*文字置中*/
+            color: black;/*文字顏色*/
+            text-decoration: none;/*底線取消*/
+        }
+        .menuicon{            
+            position: fixed;/*絕對位置*/
+            bottom: -5%;/*下方絕對位置*/
+            left: 25%;/*左方絕對位置*/         
+        }
+        .menu{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -190px;/*下方絕對位置*/
+            left:25%;/*左方絕對位置*/
+            background-color: rgba(155, 155, 155, 0.75);/*菜單背景*/
+            color: black;/*菜單文字顏色*/
+            font-size:larger;/*文字大小*/
+            padding: 20px;/*內部間格*/
+            width: 10%;/*多餘空間大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 1s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+            
+        }
+        .menurwd{
+            cursor: pointer;/*滑鼠樣式*/
+            position: fixed;/*絕對位置*/
+            bottom: -350px;/*絕對下方位置*隱藏*/
+            left:0px;/*絕對右方位置*/
+            background-color: rgba(255, 255, 255);/*菜單背景*/
+            color: black;/*菜單文字*/
+            text-decoration:none;/*文字底線*/
+            font-size:larger;/*文字大小*/
+            border-radius: 5%;/*圓角*/
+            transition: 0.3s;/*動畫秒數*/
+            box-shadow:  5px 5px 5px 0px rgba(0, 0, 0, 0.425);/*陰影*/
+            padding: 10px;
+        }
+
+        ul:hover{/*懸停選擇器*/
+            background-color: rgb(255, 255, 255);
+        }        
+        ul{
+            padding: 0%;
+            transition: 0.3s;
+        }
+        a{
+            text-decoration: none;
+        }
+        /*menu class--------------------------------------*/
+
+        a:hover{
+            background-color: rgba(0, 0, 0, 0.658);/*背景顏色*/
+            cursor: pointer;/*滑鼠樣式*/
+        }
+        @media(min-width:1910px){
+            .menurwd{
+                display: none;/*隱藏*/
+            }
+        }
+
+        @media(max-width:1910px){/*rwd<1910*/
+            .menuicon{
+                display: none;/*隱藏*/
+            }
+            .menu{
+                display: none;/*隱藏*/
+            }
+            .menurwd{
+                bottom: -190px;/*絕對位置下方距離*/
+            }
+            img{
+                width: 50%;
+            }
+            #mk{
+                text-align: center;
+                width: 150px;
+            }
+            #ytvideo{
+                width: 50%;
+                height: 315;
+            }
+        }
+
+        @media(max-width:1210px){/*rwd<1210*/
+
+            .welcome {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .new {
+                margin-left:5%;/*左外邊界*/
+                margin-right: 5%; /*右外邊界*/
+            }
+            .block{
+                display: block;
+                padding: 5px;
+                text-align: center;
+            }
+            .firsttd{
+                padding: 0px;  
+                background-color: rgb(50,50,50);              
+            }
+            .lasttd{
+                font-size:1%;
+                text-align: center;
+            }
+            .heanline{
+                margin-left:0%;/*左外邊界*/
+                margin-right: 0%; /*右外邊界*/
+            }
+            .note{
+                margin-left:0%;/*左外邊界*/
+                margin-right: 0%; /*右外邊界*/
+            }
+            #mk{
+                text-align: center;
+                width: 150px;
+            }
+            img{
+                text-align: center;
+                width: 100%;
+            }
+            .menuicon{
+                display: none;/*隱藏*/
+            }
+            .menu{
+                display: none;/*隱藏*/
+            }
+            .menurwd{
+                bottom: -190px;/*絕對位置下方距離*/
+            }
+            #ytvideo{
+                width: 100%;
+                height: 315;
+            }
+            
+        }
+
+    </style>
+</head>
+<body id=inbody>
+    <!--------------------歡迎標題-------------------->  
+    <div class="welcome">
+        WELCOME&ensp;S.G.NOTE
+    </div>
+    <!--------------------歡迎標題-------------------->
+    <div class="new">
+        <!----------------專欄樣式
+        <a class="block" href="">
+            <div>
+                <img src="YELLOW.png">
+            </div>
+            <table>
+                <tr>
+                    <td class="firsttd">天氣</td>                         
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE,VIDEO|最後更新日期:2021/05/19</td>
+                </tr>
+                <tr>
+                    <td>verygood<br/>
+                        verygood<br/>
+                        verygood<br/>
+                    </td>               
+                </tr>
+            </table>
+        </a>
+        -------------------專欄樣式-------------------->
+        <!------------------------------------------------------------項目--------------------------------------------------------------->
+        <a class="block"  href="#如何成為vtuber 2021更新版">
+            <div>
+                <img id="mk" src="圖片素材/2021如何成為v.jpg">
+            </div>
+            <table>
+                <tr>
+                    <td class="firsttd">NO.1&ensp;如何成為vtuber 2021更新版</td>                         
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/05/23</td>
+                </tr>
+                <tr>
+                    <td>在2020/4我發了第一支標題是如何成為vtuber的影片，也是我回響最高的影片<br/>
+                        現在一年過去了，做法多多少少有些改動<br/>
+                        其實我一直有打算更新這方面的資訊，但是又不想用以往的方式去呈現，所以一直沒有做...<br/>
+                    </td>               
+                </tr>
+            </table>
+        </a>
+        
+        <a class="block" href="#如何成為vtuber 2020問題總集">
+            <div>
+                <img id="mk"src="圖片素材/如何成為vtuber2020問題總集圖.jpg">
+            </div>
+            <table>
+                <tr>
+                    <td class="firsttd">NO.2&ensp;如何成為vtuber 2020問題總集</td>                         
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/06/01</td>
+                </tr>
+                <tr>
+                    <td>問題一:2d模型的取得管道<br/>
+                        問題二:有app可以進行臉部的追蹤嗎?<br/>
+                        問題三:模型的價格...<br/>
+                    </td>               
+                </tr>
+            </table>
+        </a>
+
+        <a class="block" href="#不會畫圖仍可以作圖(基礎插畫風)">
+            <div>
+                <img id="mk"src="圖片素材/圖片加工150.jpg">
+            </div>
+            <table>
+                <tr>
+                    <td class="firsttd">NO.3&ensp;不會畫圖仍可以作圖(基礎插畫風)</td>                         
+                </tr>
+                <tr>
+                    <td class="lasttd"> TYPE:&ensp;NOTE|最後更新日期:2021/06/13</td>
+                </tr>
+                <tr>
+                    <td>示範軟體:CPS<br/>
+                        示範圖片櫻木奈奈、無版權背景<br/>
+                        插畫風<br/>
+                    </td>               
+                </tr>
+            </table>
+        </a>
+        <!------------------------------------------------------------項目--------------------------------------------------------------->
+        <!------------------------------------------------------------專欄--------------------------------------------------------------->
+        <!----------------------如何成為vtuber 2021更新版---------------------->
+        <p id="如何成為vtuber 2021更新版" class="heanline">
+            如何成為vtuber 2021更新版
+        </p>
+        <div class="note">
+            
+            內容在2020/4我發了第一支標題是如何成為vtuber的影片，也是我回響最高的影片，現在一年過去了，做法多多少少有些改動，其實我一直有打算更新這方面的資訊，但是又不想用以往的方式去呈現，所以一直沒有做<br/>
+            這次藉由S.G.NOTE正式上線，就打算發一篇這方面內容的更新，廢話有點太多了，那就直接開始~
+            <br/><br/><br/><br/>
+            硬體方面說明<br/><br/><br/>
+            硬體方面老實說，基本大方向都不變，目前我爬文看來，最大的更動就是鏡頭可以用手機的鏡頭代替，也算是幫各位省出道成本了<br/><br/>
+            具體如下:<br/>
+            PC<br/>
+            視訊鏡頭OR iphone10 up(安卓手機可不可以我不清楚)<br/>
+            耳機&麥克風OR耳麥<br/>
+            錄音介面(選要)<br/>
+            擷取卡(選要)<br/>
+            <br/><br/><br/>
+            軟體方面說明<br/>
+            軟體方面最大的更動是facerig軟體因為更新服務結束，目前我所知道應該是用vtuber studio會比較主流<br/>
+            <img src="圖片素材/vtuberstudio.jpg"><br/>
+            當然還有其他動態捕捉軟體，好比說live2d viewer之類的<br/>
+            這方面資訊很多，可以上yahoo.jp搜尋”vtuberやり方“就可以知道很多這方面的資訊了<br/>
+            <img src="圖片素材/vtuberやり方.jpg"><br/><br/>
+            具體如下:<br/>
+            Vtuber studio(steam)<br/>
+            Vtuber studio(iphone10以上鏡頭)<br/>
+            Obs直播軟體<br/>
+            *因為大部分的人都不會自己做模型，所以我就不放模型製作軟體了<br/>
+            *直播一樣使用強大的obs即可<br/>
+            <br/><br/><br/>
+            硬體的挑選:<br/><br/>
+            PC:近期買電腦的人應該都很尷尬，在區塊鏈經濟的革命下，市面上幾乎沒有買顯示卡的選擇權，又貴CP值又低…老實說這個真的很尷尬，這篇文章發出來估計在挑選上也買不到像樣的顯示卡，所以我也不想多做PC的介紹了，總之CPU還是跟以往一樣選AMD的吧!<br/>
+            畢竟我大AMD打的牙膏場頭破血流，顯卡就隨緣，身邊有好的入手管道就多關注吧<br/>
+            <br/><br/>
+            鏡頭&手機:<br/>
+            這個也是尷尬了，在疫情影響下，線上教學變成國民教育解方，導致視訊設備也是賣得很好，隨然我沒實際觀測現在的市場，但我推測選項上不如以往豐富，挑選基本上還是以有品牌且720P30FPS以上為標準。<br/>
+            BUT!<br/>
+            現在我覺得直接用手機鏡頭代替也是很好的選擇，可以間接省下一顆鏡頭的成本。(IOS系統的部分確定可以，安卓系統我沒試過)<br/>
+            <br/><br/>
+            耳機&麥克風or耳麥:<br/>
+            2020那支影片底下我其實是不推薦耳麥的，但是後來看了網路上的一些文章，我覺得直播、製片環境，以及自身聲音的調整，會是比較直接重要的，如果環境跟施工一樣，無論哪種麥克風基本上都是沒救，結論上不管是選擇哪種方式，只要調整的好，我覺得都是相當不錯的。<br/>
+            <br/><br/>
+            錄音介面:<br/>
+            錄音介面的定位一直在非常推薦，但又很難說是必要的產品，因為真的很方便，直接用物理按鍵去進行靈敏度跟聲音的調整，體感會比在電腦上設定好很多。<br/>
+            <img src="圖片素材/錄音介面.jpg"><br/>
+            *耳機&麥克風，錄音介面挑選可以到台灣高空上面找組合包，比較省事<br/>
+            <br/><br/>
+            擷取卡:<br/>
+            一樣是選要，主要判斷標準是有沒有想播主機遊戲，PS5、SWITCH，如果預算許可，圓剛的GC570D真的可以考慮!雙HDMI訊源輸入真的很強大!<br/>
+            <img src="圖片素材/gc570d.jpg"><br/>
+            <br/><br/><br/>
+            軟體就沒什麼好說的，咻咻啪啪就弄好了~以上<br/>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!----------------------如何成為vtuber 2021更新版---------------------->
+        <!----------------------如何成為vtuber 2020問題總集-------------------->
+        <p id="如何成為vtuber 2020問題總集"class="heanline">
+            如何成為vtuber 2020問題總集
+        </p>
+        <div class="note">
+            
+            <br/><br/>
+            問題一:2d模型的取得管道<br/><br/>
+            在講取得管道前，應該要先理解模型是怎麼來的<br/><br/>
+            首先，模型的製作要經過插畫，再來才是模型的製作<br/><br/>
+            取得的方式分成兩種，一種是直接買現成的，另一種是逐步委託處理<br/><br/>
+            逐步委託處理的部分又有分自己處理跟一條龍的合作管道<br/><br/>
+            講了這麼多，那就一步一步詳細解釋<br/><br/><br/>
+
+            一、直接購買現成的模型<br/><br/>
+            這部分台灣目前還沒有很普及<br/>
+            在我知道的範圍內中文圈只有兩種管道可以買到現成模型<br/>
+            一個是在社群上，像是有人會以推文的方式以個人名義販售<br/>
+            <br/><br/>
+            第二個是模型師手上，可能會有模型師放在自己的頁面販售<br/>
+            但是這兩點都不是常駐的，也就是說，沒有固定生產現成的模型出來賣<br/>
+            原因無他，模型在台灣市場不是很廣泛，且模型是個很客製化的東西，如果無法滿足客人審美，是非常有滯銷可能的<br/>
+            <br/><br/>
+            但是如果在日本，那又是另一回事了，日本這方面較為成熟，所以是可以在網路上找到現成的模型販售的，舉個例子:<br/>
+            我在yahoo.jp上搜尋”vtuber モデリング　販売“<br/><br/>
+            <img src="圖片素材/如何成為vtuber2020問題總集圖一.jpg"><br/><br/>
+            基本上就可以看到一些頁面，隨便點一個進去，看到イラスト，底下分類有一個モデリング，點進去就可以看到一些模型的販售資料了<br/>
+            有一些是真的放上來賣的，有一些是放展示品，寫一個大概委託的價格<br/>
+            直接放上來賣的，也有很多的項目可以選，像是加飾品之類的，雖然大部分都是要再加錢<br/>
+            有點類似你點一個套餐，然後選擇飲料換可樂要+5元的那種感覺<br/><br/>
+            <img src="圖片素材/如何成為vtuber2020問題總集圖二.jpg"><br/><br/><br/>
+
+            二、逐步委託處理<br/><br/>
+            如同第一段所講的，第二種方式是逐步委託處理<br/>
+            這種方式可以做到非常符合自己喜好的模型<br/>
+            因為所有東西都是開工前協調好的<br/>
+            舉凡是:性別、飾品、角色印象…等等<br/><br/>
+            通常會先找到你喜歡繪師，進一步的詢問<br/>
+            但是這樣很麻煩，所以我會推薦另一種方法<br/>
+            通常想做vtuber或是想要有一個模型的人<br/>
+            都是先看過某一個角色，覺得很棒，才有這樣的想法對吧?<br/>
+            那反過來說，為什麼不直接找那個角色的繪師就好呢?<br/>
+            舉例:<br/><br/>
+            以我來說，我會把繪師跟模型師的資訊，放在我有經營的平台的某處，可能是推特或是youtube，像我就是放在我的youtube頻道內的簡介底下<br/>
+            這樣就可以直接確定這位繪師有繪製模型圖的經驗了<br/>
+            <img src="圖片素材/如何成為vtuber2020問題總集圖三.jpg"><br/><br/>
+
+            那假設是已經有心儀的繪師可是不確定有沒有接委託或是繪製模型圖的經驗呢?<br/>
+            很簡單，直接把繪師的名子丟到google上面<br/>
+            既然是繪師，肯定有放作品的平台或帳號通常都會些是否有接受委託(依賴)，有的話直接透過電子郵件或是繪師指定的方式聯絡即可<br/>
+            以kashi先生的pixiv舉例:<br/>
+            <img src="圖片素材/如何成為vtuber2020問題總集圖四.jpg"><br/><br/><br/>
+
+            模型師的部分，會比繪師難找一點，我是建議直接找到一個你喜歡的現役vtuber，然後看他的模型師是誰再去聯絡<br/>
+            不然就是直接上google搜尋”vtuber模型製作”去尋找 <br/><br/><br/>
+
+            三、一條龍的合作管道<br/>
+            這部分其實就跟上面很像，只是有些繪師跟模型師有合作的關係，為了是要讓工作更有效率，成品更好<br/>
+            因為拆圖的部分，繪師的拆圖可能會和模型師預想的有落差，模型師雖然沒有明講，但是收到圖大多數都會先確認圖層，然後大概整理一下圖層<br/>
+            合作的好處就是可以極大效率的進行簡化這個步驟<br/><br/>
+
+            如果是有合作的繪師跟模型師，通常都是已經有經驗的接案者<br/>
+            一般他們直接在很明顯的地方標示出來，或是再接委託的時候就提出來，跟你確認有沒有意願直接給他們一條龍式的處理，至於收費方式就是看他們規定了<br/>
+            <img src="圖片素材/如何成為vtuber2020問題總集圖五.jpg"><br/><br/>
+
+
+
+            <br/><br/>
+            問題二:有app可以進行臉部的追蹤嗎? <br/><br/>
+            再如何成為vtuber2021裡面已經有類似解答了，可以參考<br/>
+            會有這個問題大概都是在知道hololive是用這種方式進行的，所以會提出來<br/>
+            但是hololive的軟體我推測應該是他們公司自己內部的，並沒有開放給一般人使用<br/>
+            所以一般人要用一樣使用vtuber studio即可(ios系統確定可行，安卓沒研究)<br/>
+            <img src="圖片素材/vtuberstudio.jpg"><br/><br/><br/><br/>
+
+            問題三:模型的價格<br/><br/>
+            大家應該都發現了<br/>
+            模型的價格其實是沒有很公開透明的<br/>
+            原因很簡單，這種藝術類的東西，價格是很難界定的<br/>
+            好比說一幅畫，作者成名前的價格跟成名後的價格是不一樣的<br/>
+            模型也是同理<br/>
+            影響價格的因素，除了技巧，可能還包含名氣，或是接案經驗…等等<br/><br/>
+
+            總之委託前先詳細的確認價格”區間”<br/>
+            會說區間的原因是因為，一般來說就算是到了談價階段，也未必會直接給你一個很明確的數字<br/>
+            畢竟繪製的途中會去修正，作品完成可能你覺得有不足的地方也還要改<br/>
+            這些事情都要花時間處理，所以就會影響到價格<br/>
+            這件事我也沒辦法多談，藝術的東西價格是主觀的，只能呼籲尊重專業<br/><br/><br/><br/>
+
+
+
+            問題四:不想用麥克風加耳機，耳麥可以嗎?<br/><br/>
+            同樣在如何成為vtuber2021中有解答<br/>
+            沒有什麼東西是不行的，重點在於呈現出來的效果<br/><br/>
+
+            一個剛出道的個人勢用幾十萬的配備<br/>
+            跟一個職業聲優用千元出頭的配備<br/>
+            你說誰的效果好?別人變身器裝在喉嚨裡怎麼跟他比?<br/><br/>
+
+            一個國家音樂廳隔音級別的房間<br/>
+            跟一個棚子架在工廠旁邊的環境<br/>
+            這種情況已經不是用設備去解決了<br/><br/>
+
+            這樣說大概了解了吧，看自己預算<br/>
+            解決最根本的問題、做在能力範圍內做的到的事才是重點
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!----------------------如何成為vtuber 2020問題總集-------------------->
+        <!----------------------不會畫圖仍可以作圖(基礎插畫風)---------------------->
+        <p id="不會畫圖仍可以作圖(基礎插畫風)" class="heanline">
+            不會畫圖仍可以作圖(基礎插畫風)
+        </p>
+        <div class="note">
+            先上影片，底下有文章可以配合食用<br><br>
+            <iframe id="ytvideo" width="560" height="315" src="https://www.youtube.com/embed/Zr6YaN3SsZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br><br>這次要來分享如何在10分鐘就完成一個角色美術圖<br><br>
+            需要資料:<br>
+            CPS軟體(Ph也可以，只是我示範用CPS)<br>
+            任一張解析度大於1000像素png去被角色印象圖(立繪就是其中之一)<br>
+            一張無版權背景圖(網路上找)<br>
+            <br><br>
+            那一開始把圖片放到cps裡面，我找的是一張塔圖
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖1.jpg"><br><br>
+            藍天的背景我想自己加工，所以我用"色域選擇"把圖片的天空選起來去掉<br>
+            可以看到圖片剩塔而已<br>
+            然後稍微把邊加工一下，沒去乾淨的去乾淨<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖2.jpg"><br><br>
+            接下來創建一個背景用的圖層，用白色到藍色的漸層，畫在圖層上<br>
+            並把塔的圖層，用高斯模糊調整一下，我數值設在10<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖4.jpg"><br><br>
+            然後要來做雲朵，加一個新的圖層在塔的圖層跟藍天的圖層中間<br>
+            把調色盤調成白色，利用套鎖工具任意塗抹，並且用填滿的效果增加雲朵<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖5.jpg"><br><br>
+            接下來加上渲染，要加多少自己感覺<br>
+            我是加兩層，一層是黃鶴色，一層是藍天色<br>
+            分別從下往上，上往下去加<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖6.jpg"><br><br>
+            然後用"插畫風"這個效果去調整，每張圖設定的數值不一樣，要自己去看<br>
+            調整後也可以大概修一下雜邊<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖7.jpg"><br><br>
+            最後把人物把上去，隨意調整一下，就完成了!<br>
+            <img style="width: 100%;" src="./圖片素材/插畫風圖片說明/插畫風圖8.jpg">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!----------------------不會畫圖仍可以作圖(基礎插畫風)---------------------->
+        <!------------------------------------------------------------專欄--------------------------------------------------------------->
+        <!--------------------看板娘--------------------> 
+        <div class="menuicon" >
+            <img   style="width: 50%" src="圖片素材/MENUOVER.png">
+        </div>
+        <!--------------------看板娘--------------------> 
+        <!--------------------電腦版菜單--------------------> 
+        <div id=menuid class="menu" onmouseover="openmenu();" onmouseleave="closemenu();">
+            <h3 class="comant">MENU</h3>
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>            
+                
+            <a href="https://sgyamiko.github.io/S.G.note/S.G.vt多媒體.HTML"><ul class="comant">VT多媒體</ul></a>
+        </div>
+        <!--------------------電腦版菜單--------------------> 
+        <!--------------------rwd版菜單--------------------> 
+        <div id=menurwdid class="menurwd" onmouseover="openmenurwd();" >
+            
+            
+                <h3 class="comant">MENU</h3>
+                    
+                <a href="https://sgyamiko.github.io/S.G.note/S.G.HTML"><ul class="comant">首頁</ul></a>            
+                    
+                <a href="https://sgyamiko.github.io/S.G.note/S.G.前端語言.HTML"><ul class="comant">前端語言NOTE</ul></a>           
+                    
+                <a href="https://sgyamiko.github.io/S.G.note/S.G.vt多媒體.HTML"><ul class="comant">VT多媒體</ul></a>
+                        
+            
+        </div>
+        <!--------------------rwd版菜單--------------------> 
+
+    </div>
+    
+    <script>
+        //網頁載入動畫函式------------------------------
+        window.onload=function(){
+            let inbody=document.getElementById("inbody");
+            inbody.style.opacity=1
+            console.log("inbody")
+        }
+
+        //電腦版出菜單函式------------------------------
+        function openmenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="5px"
+            console.log("test openmenu")
+        }
+
+        //電腦版收菜單函式------------------------------
+        function closemenu(){
+            let menuid=document.querySelector('#menuid');
+            menuid.style.bottom="-190px"
+            console.log("test closemenu")
+        }
+
+        //rwd版出菜單函式------------------------------
+        function openmenurwd(){
+            let menurwdid=document.querySelector('#menurwdid');
+            menurwdid.style.bottom="2px"
+        }
+
+        //rwd版收菜單函式*jQ------------------------------
+        //function closemenurwd(){
+        //    let menurwdid=document.querySelector('#menurwdid');
+        //    menurwdid.style.bottom="-190px"
+        //}
+
+        $(document).ready(function(){
+                $(window).scroll(function() {
+                    $("#menurwdid").css("bottom",'-190px');
+                    console.log(window)
+                });
+            });
+
+
+        
+
+    </script>
+    
+</body>
+</html>
